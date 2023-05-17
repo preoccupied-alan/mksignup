@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="logo.png" alt="My Logo">
+    </div>
+    <div class="signup">
+        <h2>Select a Slot:</h2>
+        <form id="signup-form" onsubmit="handleSubmit(event)">
+          <select name="slots" id="slots" required>
+    <option value="">Select a Slot</option>
+    <option value="1">Slot 1</option>
+    <option value="2">Slot 2</option>
+    <option value="3">Slot 3</option>
+    <!-- JavaScript code to generate slots 4 through 40 dynamically -->
+    <script>
+        const slotsSelect = document.getElementById("slots");
+
+        for (let i = 4; i <= 40; i++) {
+            const option = document.createElement("option");
+            option.value = i.toString();
+            option.textContent = `Slot ${i}`;
+            slotsSelect.appendChild(option);
+        }
+    </script>
+</select>
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
